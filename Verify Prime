@@ -1,0 +1,35 @@
+// Given an integer n, the task is to check whether that the given integer is a prime number or not
+
+Complete the function verifyPrime() given in the editor, that accepts an integer parameter n and returns true/1 if number is prime and false/0 if number is not prime.
+
+
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+  static boolean verifyPrime(int n)
+{
+  if(n <= 1)
+    return false;
+   for (int i = 2; i <= Math.sqrt(n); i++)
+        {
+            if (n % i == 0)
+                return false;
+   		}
+        return true;
+}
+public static void main(String[] args){
+  int T, no;
+  Scanner s = new Scanner(System.in);
+  T = Integer.parseInt(s.nextLine());
+  while(T>0){
+    no = Integer.parseInt(s.nextLine());
+    if (verifyPrime(no))
+      System.out.println("PRIME"); 
+    else 
+      System.out.println("NOT PRIME"); 
+    T = T-1;
+  }
+}
+}
